@@ -47,7 +47,7 @@ elseif (nreal == 613 * 613)
     cur_index = cur_index + 2;
     eta_c = data(cur_index, 1);
     eta_m = data(cur_index + 1, 1);
-else
+elseif(nbin == 613 * 613)
     nbin = data(6,1);
     cur_index = 7 ;
     % nbits = data(cur_index:(cur_index + nbin)-1, 1);
@@ -63,6 +63,18 @@ else
     end
     pcross_bin = data(cur_index, 1);
     pmut_bin = data(cur_index + 1, 1);
+else
+    nbin = data(6,1);
+    cur_index = 7 ;
+    nbits = data(cur_index:(cur_index + nbin)-1, 1);
+    min_binvar = data(cur_index:(cur_index + nbin)-1, 2);
+    max_binvar = data(cur_index:(cur_index + nbin)-1, 3);
+    cur_index = cur_index + nbin ;
+    pcross_bin = data(cur_index, 1);
+    pmut_bin = data(cur_index + 1, 1);
+    nbits = nbits';
+    min_binvar = min_binvar';
+    max_binvar = max_binvar';
 end
 fmt = [ 'popsize: ',		num2str(popsize)        ]; disp(fmt)
 fmt = [ 'ngen: ',           num2str(ngen)           ]; disp(fmt)
