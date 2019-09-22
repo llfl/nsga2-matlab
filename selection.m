@@ -49,7 +49,7 @@ for i = 1:4:popsize
             new_pop(i+2,1:nreal) = c1 ;
             new_pop(i+3,1:nreal) = c2 ;
     elseif(nbin > 0)
-            [c1, c2] = bin_cross_two_point(old_pop(p1i,1:sum(nbits)), old_pop(p2i,1:sum(nbits)), pcross_bin);
+            [c1, c2] = bin_cross_two_point(old_pop(p1i,1:sum(nbits)), old_pop(p2i,1:sum(nbits)), nbits, pcross_bin);
             % new_pop(i+2,1:nbin) = c1 ;
             % new_pop(i+3,1:nbin) = c2 ;
     end 
