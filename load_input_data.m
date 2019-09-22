@@ -42,14 +42,20 @@ if (nreal ~= 0)
 else
     nbin = data(6,1);
     cur_index = 7 ;
-    nbits = data(cur_index:(cur_index + nbin)-1, 1);
-    min_binvar = data(cur_index:(cur_index + nbin)-1, 2);
-    max_binvar = data(cur_index:(cur_index + nbin)-1, 3);
-    cur_index = cur_index + nbin ;
+    % nbits = data(cur_index:(cur_index + nbin)-1, 1);
+    % min_binvar = data(cur_index:(cur_index + nbin)-1, 2);
+    % max_binvar = data(cur_index:(cur_index + nbin)-1, 3);
+    % cur_index = cur_index + nbin ;
+    nbits(1:nbin) = 1;
+    min_binvar(1:nbin) = 0;
+    max_binvar(1:nbin) = 1;
+    n = sqrt(nbin);
+    for i = n
+        max_binvar((i-1) * n + i ) = 0;
+    end
     pcross_bin = data(cur_index, 1);
     pmut_bin = data(cur_index + 1, 1);
 end
-
 fmt = [ 'popsize: ',		num2str(popsize)        ]; disp(fmt)
 fmt = [ 'ngen: ',           num2str(ngen)           ]; disp(fmt)
 fmt = [ 'nobj: ',           num2str(nobj)           ]; disp(fmt)

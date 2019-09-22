@@ -1,0 +1,19 @@
+200     %popsize  This variable stores the population size (a multiple of 4)
+250     %迭代次数  Number of generations
+2       %目标函数数量 Number of objectives
+6       %ncon  条件个数 Number of constraints
+6       %nreal x个数 Number of real variables
+0 10    % x范围
+0 10
+1 5
+0 6
+1 5
+0 10
+0.9     %交叉probability of crossover of real variable
+0.1667  %变异probability of mutation of real variable
+5       %eta_C distribution index for real variable SBX crossover 
+5       %eta_m distribution index for real variable polynomial mutation
+0       %nbin number of binary variables
+1       %nbit 
+1
+2

@@ -20,7 +20,7 @@ global ncon ;
 global ngen ;
 
 %% load algorithm parameters
-load_input_data('input_data/osy.in');
+load_input_data('input_data/fly.in');
 pprint('\nInput data successfully entered, now performing initialization\n\n');
 
 %% for debugging puproses 
@@ -45,7 +45,7 @@ elseif(nbin > 0)
 end
 
 %% this is the objective function that we are going to optimize
-obj_func = @osy ;
+obj_func = @fly ;
 
 %% allocate memory for pops
 if(nreal > 0)
@@ -73,7 +73,7 @@ do_plot = true ;
 % plot the pareto front
 if(do_plot); show_plot(1, parent_pop, false, [1 2 3]); end;
 
-do_save = false ;
+do_save = true ;
 % save the current pop
 if(do_save); save_pop(1, parent_pop, false); end;
 
