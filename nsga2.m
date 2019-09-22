@@ -20,7 +20,7 @@ global ncon ;
 global ngen ;
 
 %% load algorithm parameters
-load_input_data('input_data/zdt4.in');
+load_input_data('input_data/osy.in');
 pprint('\nInput data successfully entered, now performing initialization\n\n');
 
 %% for debugging puproses 
@@ -45,7 +45,7 @@ elseif(nbin > 0)
 end
 
 %% this is the objective function that we are going to optimize
-obj_func = @zdt4 ;
+obj_func = @osy ;
 
 %% allocate memory for pops
 if(nreal > 0)
@@ -69,7 +69,7 @@ pprint('Initialization done, now performing first generation\n\n');
 parent_pop = evaluate_pop(parent_pop, obj_func);
 parent_pop = assign_rank_and_crowding_distance(parent_pop);
 
-do_plot = false ;
+do_plot = true ;
 % plot the pareto front
 if(do_plot); show_plot(1, parent_pop, false, [1 2 3]); end;
 
