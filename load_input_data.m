@@ -40,13 +40,21 @@ if (nreal ~= 0)
     eta_c = data(cur_index, 1);
     eta_m = data(cur_index + 1, 1);
 
-elseif (nreal == 613 * 613)
+elseif (nreal > 1000)
     cur_index = 6 ;
     pcross_real = data(cur_index, 1);
     pmut_real = data(cur_index + 1, 1);
     cur_index = cur_index + 2;
     eta_c = data(cur_index, 1);
     eta_m = data(cur_index + 1, 1);
+    min_realvar(1:nreal) = 0;
+    max_realvar(1:nreal) = 1;
+    n = sqrt(nreal);
+    for i = n
+        max_realvar((i-1) * n + i ) = 0;
+    end
+    min_realvar = min_realvar';
+    max_realvar = max_realvar';
 elseif(nbin > 1000)
     nbin = data(6,1);
     cur_index = 7 ;
