@@ -29,7 +29,7 @@ ngen = data(2,1);
 nobj = data(3,1);
 ncon = data(4,1);
 nreal = data(5,1);
-if (nreal ~= 0)
+if (nreal ~= 0) & (nreal <= 1000)
     cur_index = 6 ;
     min_realvar = data(cur_index:(cur_index + nreal)-1, 1);
     max_realvar = data(cur_index:(cur_index + nreal)-1, 2);
