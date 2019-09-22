@@ -19,16 +19,16 @@ function [parent_pop] = osy(parent_pop)
 %       1 <= x_5 <= 5.0
 %       0 <= x_6 <= 10.0
 
-global nbin ;
-global nbin;
+% global nreal ;
+global nreal;
 global ncon ;
 global nobj ;
 
-cindex = nbin + nobj + 1 : nbin + nobj + ncon ;
+cindex = nreal + nobj + 1 : nreal + nobj + ncon ;
 
 % disp(parent_pop(1,:))
 
-% x = parent_pop(:,1:nbin);
+% x = parent_pop(:,1:nreal);
 % f1 = -(25.0 .* ((x(:,1) - 2.0) .^ 2.0) + ((x(:,2) - 2.0) .^ 2.0) ...
 %              + ((x(:,3) - 1.0) .^ 2.0) + ((x(:,4) - 4.0) .^ 2.0) ... 
 %              + ((x(:,5) - 1.0) .^ 2.0));
@@ -43,8 +43,8 @@ cindex = nbin + nobj + 1 : nbin + nobj + ncon ;
 % c(:,5) = 1.0 - (((x(:,3) - 3.0) .^ 2.0) ./ 4.0) - (x(:,4) ./ 4.0);
 % c(:,6) = (((x(:,5) - 3.0) .^ 2.0) ./ 4.0) + (x(:,6) ./ 4.0) - 1.0;
 load('dataset1.mat');
-x = parent_pop(:,1:nbin);
-n = sqrt(nbin)
+x = parent_pop(:,1:nreal);
+n = sqrt(nreal)
 f1_sum = 0;
 f2_sum = 0;
 for i = 1:n
@@ -85,7 +85,7 @@ for i = 1:n
 end
 current_cindex = 2 * n + current_cindex;
 
-parent_pop(:, (nbin+1)) = f1;
-parent_pop(:, (nbin+2)) = f2;
+parent_pop(:, (nreal+1)) = f1;
+parent_pop(:, (nreal+2)) = f2;
 parent_pop(:,cindex) = c ;
 end
