@@ -54,12 +54,12 @@ else
     % min_binvar = data(cur_index:(cur_index + nbin)-1, 2);
     % max_binvar = data(cur_index:(cur_index + nbin)-1, 3);
     % cur_index = cur_index + nbin ;
-    nbits(1:nbin) = 1;
-    min_binvar(1:nbin) = 0;
-    max_binvar(1:nbin) = 1;
+    nbits(1,1:nbin) = 1;
+    min_binvar(1,1:nbin) = 0;
+    max_binvar(1,1:nbin) = 1;
     n = sqrt(nbin);
     for i = n
-        max_binvar((i-1) * n + i ) = 0;
+        max_binvar(1,(i-1) * n + i ) = 0;
     end
     pcross_bin = data(cur_index, 1);
     pmut_bin = data(cur_index + 1, 1);
@@ -76,9 +76,9 @@ fmt = [ 'pmut_real: ',		num2str(pmut_real)      ]; disp(fmt)
 fmt = [ 'eta_c: ',          num2str(eta_c)          ]; disp(fmt)
 fmt = [ 'eta_m: ',          num2str(eta_m)          ]; disp(fmt)
 fmt = [ 'nbin: ',           num2str(nbin)           ]; disp(fmt)
-fmt = [ 'nbits: ',          num2str(nbits)         ]; disp(fmt)
-fmt = [ 'min_binvar: ',		num2str(min_binvar)	]; disp(fmt)
-fmt = [ 'max_binvar: ',		num2str(max_binvar)	]; disp(fmt)
+fmt = [ 'nbits: ',          num2str(nbits')         ]; disp(fmt)
+fmt = [ 'min_binvar: ',		num2str(min_binvar')	]; disp(fmt)
+fmt = [ 'max_binvar: ',		num2str(max_binvar')	]; disp(fmt)
 fmt = [ 'pcross_bin: ',		num2str(pcross_bin)     ]; disp(fmt)
 fmt = [ 'pmut_bin: ',		num2str(pmut_bin)       ]; disp(fmt)
 
