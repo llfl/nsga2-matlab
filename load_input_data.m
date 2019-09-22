@@ -47,7 +47,7 @@ elseif (nreal == 613 * 613)
     cur_index = cur_index + 2;
     eta_c = data(cur_index, 1);
     eta_m = data(cur_index + 1, 1);
-elseif(nbin == 613 * 613)
+elseif(nbin > 1000)
     nbin = data(6,1);
     cur_index = 7 ;
     % nbits = data(cur_index:(cur_index + nbin)-1, 1);
