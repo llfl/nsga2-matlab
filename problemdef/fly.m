@@ -63,7 +63,7 @@ c3_sum = 0;
 for i = 1:n 
     c1_sum = c1_sum + x(:,(i-1)*n + n);
 
-    c3_sum = c3_sum + x(:,(i-1) + j);
+    c3_sum = c3_sum + x(:,i);
 end
 
 c(:, 1) = c1_sum - 1;
