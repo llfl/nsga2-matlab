@@ -20,7 +20,7 @@ global ncon ;
 global ngen ;
 
 %% load algorithm parameters
-load_input_data('input_data/fly.in');
+load_input_data('input_data/fly2.in');
 pprint('\nInput data successfully entered, now performing initialization\n\n');
 
 %% for debugging puproses 
@@ -45,7 +45,7 @@ elseif(nbin > 0)
 end
 
 %% this is the objective function that we are going to optimize
-obj_func = @fly ;
+obj_func = @fly2 ;
 
 %% allocate memory for pops
 if(nreal > 0)
