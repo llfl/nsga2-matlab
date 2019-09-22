@@ -50,8 +50,8 @@ elseif (nreal > 1000)
     min_realvar(1:nreal) = 0;
     max_realvar(1:nreal) = 1;
     n = sqrt(nreal);
-    for i = n
-        max_realvar((i-1) * n + i ) = 0;
+    for i = 1:n
+        max_realvar((i-1) * n + i ) = 0.1;
     end
     min_realvar = min_realvar';
     max_realvar = max_realvar';
@@ -66,7 +66,7 @@ elseif(nbin > 1000)
     min_binvar(1:nbin) = 0;
     max_binvar(1:nbin) = 1;
     n = sqrt(nbin);
-    for i = n
+    for i = 1:n
         max_binvar((i-1) * n + i ) = 0;
     end
     pcross_bin = data(cur_index, 1);
