@@ -39,6 +39,14 @@ if (nreal ~= 0)
     cur_index = cur_index + 2;
     eta_c = data(cur_index, 1);
     eta_m = data(cur_index + 1, 1);
+
+elseif (nreal == 613 * 613)
+    cur_index = 6 ;
+    pcross_real = data(cur_index, 1);
+    pmut_real = data(cur_index + 1, 1);
+    cur_index = cur_index + 2;
+    eta_c = data(cur_index, 1);
+    eta_m = data(cur_index + 1, 1);
 else
     nbin = data(6,1);
     cur_index = 7 ;
@@ -68,9 +76,9 @@ fmt = [ 'pmut_real: ',		num2str(pmut_real)      ]; disp(fmt)
 fmt = [ 'eta_c: ',          num2str(eta_c)          ]; disp(fmt)
 fmt = [ 'eta_m: ',          num2str(eta_m)          ]; disp(fmt)
 fmt = [ 'nbin: ',           num2str(nbin)           ]; disp(fmt)
-fmt = [ 'nbits: ',          num2str(nbits')         ]; disp(fmt)
-fmt = [ 'min_binvar: ',		num2str(min_binvar')	]; disp(fmt)
-fmt = [ 'max_binvar: ',		num2str(max_binvar')	]; disp(fmt)
+fmt = [ 'nbits: ',          num2str(nbits)         ]; disp(fmt)
+fmt = [ 'min_binvar: ',		num2str(min_binvar)	]; disp(fmt)
+fmt = [ 'max_binvar: ',		num2str(max_binvar)	]; disp(fmt)
 fmt = [ 'pcross_bin: ',		num2str(pcross_bin)     ]; disp(fmt)
 fmt = [ 'pmut_bin: ',		num2str(pmut_bin)       ]; disp(fmt)
 
